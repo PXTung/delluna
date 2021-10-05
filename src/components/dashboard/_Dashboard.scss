@@ -1,0 +1,118 @@
+.dashboard {
+    display: flex;
+    margin-top: 40px;
+    box-shadow: 0px 0px 8px 2px rgb(0 0 0 / 40%);
+    padding: 15px;
+    border-radius: 3px;
+
+    &-menu {
+        width: 20%;
+        border-right: 1px solid $itemBorder;
+        padding-right: 15px;
+        margin-bottom: 100px;
+
+        &-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+
+        &-item {
+            height: 32px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $item-hover;
+                color: white;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    &-content {
+        width: 80%;
+        padding-left: 15px;
+        padding-bottom: 100px;
+
+        &-title {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            text-align: center;
+            font-weight: 800;
+            height: 32px;
+            border-bottom: 1px solid $titleColor;
+        }
+
+        &-field {
+           display: table;
+           width: 100%;
+           height: 56px;
+           vertical-align: middle;
+           border-bottom: 1px solid $itemBorder;
+
+           input, select {
+               display: table-cell;
+               width: 85%;
+               height: 32px;
+               margin: 16px 10px;
+           }
+        }
+
+        &-label {
+            display: table-cell;
+            font-size: 1.3rem;
+            width: 15%;
+            height: 100%;
+            vertical-align: middle;
+            padding-left: 10px;
+            margin-right: 20px;
+            background-color: $label-background;
+        }
+
+        &-button {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            button {
+                width: 200px;
+                height: 32px;
+            }
+        }
+
+        &-pictures {
+            display: block;
+        }
+
+        &-profilePicture {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        &-image {
+            height: 56px;
+            cursor: pointer;
+            border: 1px solid $itemBorder;
+            margin: 5px 0;
+            margin-left: 10px;
+
+            &:hover {
+                max-height: 240px;
+                max-width: 240px;
+                animation: openImage 2s linear;
+            }
+        }
+    }
+}
+
+.image-selected {
+    border: 1px solid $item-focus !important;
+}

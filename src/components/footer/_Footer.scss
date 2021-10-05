@@ -1,0 +1,53 @@
+.footer {
+  margin-top: 40px;
+
+  &-menu {
+    margin: 0;
+    padding: 15px 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 1.2rem;
+    line-height: normal;
+    cursor: pointer;
+    background-color: $sectionBackground;
+
+    @media screen and (max-width: $phone-width) {
+      gap: 10px;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-separate {
+    width: 1px;
+    height: 10px;
+    background-color: $textColor;
+    transform: rotate(30deg);
+  }
+
+  &-infor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.15rem;
+    padding-top: 40px;
+    gap: 5px;
+
+    img {
+      height: 100px;
+      margin-bottom: 30px;
+    }
+  }
+
+  span {
+    text-align: center;
+  }
+}

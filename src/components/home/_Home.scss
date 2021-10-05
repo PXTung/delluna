@@ -1,0 +1,16 @@
+.home {
+  &-hero {
+    height: 550px;
+    background: url("../../assets/imgs/bg_hero.jpeg") no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include maxw($tablet-width) {
+      height: 400px;
+    }
+
+    @include maxw($phone-width) {
+      height: 250px;
+    }
+  }
+}

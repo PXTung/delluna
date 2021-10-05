@@ -1,0 +1,37 @@
+.Toastify__toast-container--top-right {
+  margin-top: 30px;
+
+  @media screen and(max-width: $phone-width) {
+    margin-top: 40px;
+  }
+}
+
+.Toastify__toast-container {
+  width: 260px !important;
+
+  @include maxw($phone-width) {
+    left: auto;
+  }
+}
+
+.Toastify__toast-theme--light {
+  background: $toastBackground !important;
+  color: $whiteColor !important;
+}
+
+.Toastify__progress-bar-theme--light {
+  background: $whiteColor !important;
+}
+
+.Toastify__progress-bar {
+  height: 2px !important;
+}
+
+.Toastify__toast-body {
+  font-size: 1.1rem !important;
+
+  a {
+    color: $whiteColor;
+    text-decoration: none;
+  }
+}

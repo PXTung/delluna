@@ -1,0 +1,118 @@
+@keyframes forwardLoading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes inverseLoading {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes bounceUpDown {
+  0% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes bounceInDown {
+  0% {
+    transform: translate3d(0, -60px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes bounceInLeft {
+  0% {
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(20px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-2px, 0, 0);
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    transform: translate3d(200px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInTop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 200px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 0px, 0);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes pulseBgSlow {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 0 100%;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes openImage {
+  from {
+    height: 56px;
+  }
+
+  to {
+    height: 100%;
+  }
+}

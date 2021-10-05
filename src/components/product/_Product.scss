@@ -1,0 +1,471 @@
+/*----------------------HEADER PRODUCT---------------------------*/
+.product {
+  &-header {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-branch {
+      letter-spacing: 0.3rem;
+    }
+
+    &-type {
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+      margin: 0;
+    }
+
+    &-wave {
+      background: url("../../assets/imgs/wave.png") no-repeat 50% bottom;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+/*----------------------SUGGESTION PRODUCT---------------------------*/
+.suggestion {
+  &-item {
+    margin-top: 16px;
+    padding: 8px;
+    height: 230px;
+    position: relative;
+    border: 1px solid $borderColor;
+    transition: all 0.5s linear;
+
+    &:hover {
+      box-shadow: 0px 0px 3px 1px rgb(0 0 0 / 40%);
+    }
+
+    &:hover .suggestion-frame::before {
+      top: 50%;
+      bottom: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:hover .suggestion-frame::after {
+      left: 50%;
+      right: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:hover .suggestion-description {
+      animation: bounceInDown 0.8s ease-out;
+    }
+
+    &:hover .suggestion-name {
+      animation: bounceInLeft 0.8s ease-out;
+    }
+  }
+
+  &-frame {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    border: 1px solid $borderColor;
+    padding: 0 15px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transition: all 0.6s ease-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transition: all 0.6s ease-out;
+    }
+  }
+
+  &-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: auto;
+  }
+
+  &-image {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &-description {
+    font-size: 1.1rem;
+    letter-spacing: 0.3rem;
+    color: $titleColor;
+  }
+
+  &-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $textColor;
+    margin: 10px 0 20px 0;
+
+    @include maxw($tablet-width) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &-more {
+    border: 1px solid $itemBorder;
+    background-color: transparent;
+    box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 20%);
+    max-width: 150px;
+    height: 36px;
+    cursor: pointer;
+
+    span {
+      margin-left: 20px;
+
+      @include maxw($tablet-width) {
+        margin-left: 10px;
+      }
+    }
+
+    @include maxw($tablet-width) {
+      max-width: 130px;
+    }
+  }
+}
+
+.suggestion-list .suggestion-item:nth-of-type(odd) .suggestion-frame {
+  background-color: $grayColor;
+}
+
+.suggestion-list .suggestion-item:nth-of-type(even) .suggestion-frame {
+  background-color: $orrangeColor;
+}
+
+/*----------------------ITEM---------------------------*/
+.item {
+  height: 390px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: 1px solid $borderColor;
+  background-color: $whiteColor;
+  transition: all 0.5s linear;
+
+  &:hover {
+    box-shadow: 0px 0px 3px 1px rgb(0 0 0 / 40%);
+  }
+
+  &:hover .item-image-frame {
+    padding: 0;
+  }
+
+  &:hover .item-icon-plus::after {
+    transform: rotate(90deg);
+  }
+
+  &-image {
+    height: 280px;
+    max-width: 280px;
+    padding: 5px;
+    cursor: pointer;
+
+    &-frame {
+      height: 100%;
+      width: 100%;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.5s linear;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  &-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &-name {
+    font-size: 1.4rem;
+    padding: 0 10px;
+    text-align: center;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+
+  &-icon {
+    margin-top: 10px;
+    padding: 20px;
+    cursor: pointer;
+    list-style: none;
+
+    &-plus {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 47%;
+        width: 18px;
+        height: 1px;
+        background-color: black;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 47%;
+        width: 18px;
+        height: 1px;
+        background-color: black;
+        transition: all 0.5s linear;
+      }
+    }
+  }
+}
+
+/*----------------------NEW PRODUCT---------------------------*/
+.new {
+  background-color: $sectionBackground;
+
+  .product-header {
+    padding-top: 20px;
+  }
+}
+
+.owl-theme {
+  .item {
+    margin: auto;
+
+    @include minw($phone-width) {
+      width: 100%;
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+/*----------------------DETAIL---------------------------*/
+.detail {
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    @include maxw($phone-width) {
+      flex-direction: column;
+    }
+  }
+
+  &-images {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include maxw($phone-width) {
+      width: 100%;
+    }
+
+    &-show {
+      max-width: 400px;
+      max-height: 400px;
+      text-align: center;
+
+      @include maxw($phone-width) {
+        max-height: 400px;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    &-thumbnail {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    &-item {
+      margin: 2px;
+      cursor: pointer;
+
+      img {
+        max-height: 100%;
+      }
+
+      &:hover {
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  &-content {
+    width: 50%;
+
+    @include maxw($phone-width) {
+      width: 100%;
+      text-align: center;
+    }
+
+    &-name {
+      font-size: 2rem;
+      line-height: normal;
+      font-weight: 600;
+      margin: 40px 0;
+
+      @include maxw($phone-width) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-field {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $itemBorder;
+    }
+
+    &-label {
+      font-size: 1.2rem;
+      width: 30%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      padding: 20px 0;
+      padding-left: 20px;
+      background-color: $label-background;
+    }
+
+    &-price,
+    &-total {
+      font-size: 1.2rem;
+    }
+
+    &-quantity {
+      font-size: 1.4rem;
+      height: 24px;
+      width: 70px;
+    }
+
+    &-button {
+      margin-top: 60px;
+      display: flex;
+      gap: 20px;
+
+      @include maxw($phone-width) {
+        gap: 10px;
+        margin-top: 30px;
+        flex-direction: column;
+      }
+
+      button {
+        height: 32px;
+        width: 30%;
+        font-size: 1.2rem;
+
+        @include maxw($phone-width) {
+          width: 100%;
+        }
+      }
+    }
+
+    .detail-content-field:nth-child(2) {
+      border-top: 1px solid $itemBorder;
+    }
+  }
+
+  &-info {
+    margin-top: 60px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    width: 100%;
+
+    @include maxw($phone-width) {
+      margin-top: 30px;
+    }
+  }
+
+  &-list {
+    display: inline-block;
+    margin-bottom: -5px;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      font-size: 1.3rem;
+      font-weight: 300;
+      padding: 10px;
+      float: left;
+      margin-left: -1px;
+      position: relative;
+      border: 1px solid #ededed;
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+      z-index: 1;
+
+      @include maxw($phone-width) {
+        font-size: 1rem;
+        padding: 6px 4px;
+      }
+    }
+
+    .selected {
+      border: 1px solid #ccc;
+      border-bottom: 1px solid #fff;
+      z-index: 2;
+    }
+  }
+
+  &-information {
+    margin-top: 40px;
+    display: flex;
+
+    img {
+      height: 100%;
+      margin: auto;
+    }
+  }
+}
+
+.item-animation {
+  animation: bounceInTop 2s ease-in-out;
+}
+
+.item-hidden {
+  opacity: 0 !important;
+}

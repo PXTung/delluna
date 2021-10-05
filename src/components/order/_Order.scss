@@ -1,0 +1,202 @@
+.order {
+  &-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 50px;
+    padding: 20px 0;
+    text-align: center;
+    background-color: $header-background;
+  }
+
+  &-section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: $label-background;
+    margin-top: 10px;
+    padding: 15px 0;
+    padding-left: 15px;
+    border-bottom: 1px solid $textColor;
+  }
+
+  &-product {
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $label-background;
+
+      &-info {
+        display: flex;
+        padding: 5px 0;
+        width: 90%;
+      }
+
+      &-image {
+        max-width: 100px;
+        border: 1px solid $borderColor;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      &-detail {
+        padding-left: 15px;
+      }
+
+      &-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 2rem;
+      }
+
+      &-quantity,
+      &-total {
+        font-size: 1.2rem;
+        letter-spacing: 0.15rem;
+        opacity: 0.8;
+      }
+    }
+
+    &-remove {
+      width: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-user {
+    &-field {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $itemBorder;
+      height: 60px;
+    }
+
+    &-label {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+      font-size: 1.2rem;
+      margin-right: 15px;
+      height: 100%;
+      background-color: $label-background;
+    }
+
+    input {
+      width: 80%;
+    }
+  }
+
+  &-discount {
+    &-field {
+      display: flex;
+      height: 60px;
+      align-items: center;
+      border-bottom: 1px solid $itemBorder;
+    }
+
+    &-label {
+      width: 20%;
+      padding-left: 15px;
+      height: 100%;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      background-color: $label-background;
+    }
+
+    &-code {
+      width: 70%;
+      margin: 0 15px;
+    }
+
+    &-apply {
+      width: 10%;
+      height: 32px;
+    }
+  }
+
+  &-detail {
+    &-field {
+      margin: 0 auto;
+      border-bottom: 1px solid $itemBorder;
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      align-items: center;
+      font-size: 1.3rem;
+    }
+
+    &-label {
+      letter-spacing: 0.2rem;
+    }
+  }
+
+  &-confirm {
+    width: 100%;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+
+    &-order {
+      width: 60%;
+      height: 32px;
+      font-weight: 600;
+      letter-spacing: 0.3rem;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.ordered {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  font-size: 1.3rem;
+
+  &-person {
+    display: flex;
+    border-bottom: 1px solid $textColor;
+    margin-top: 20px;
+    height: 32px;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  &-item {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: 1px solid $itemBorder;
+    height: 32px;
+    align-items: center;
+
+    .col-s1 {
+      width: 10%;
+    }
+
+    .col-s2 {
+      width: 20%;
+    }
+
+    .col-s4 {
+      width: 40%;
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &-index,
+    &-name {
+      justify-content: flex-start !important;
+    }
+  }
+}
