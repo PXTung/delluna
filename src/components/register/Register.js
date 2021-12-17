@@ -1,10 +1,12 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
+import { ConstantContext } from "../../context/Constant";
 
 const Register = () => {
-  const host = "https://dellunashop.herokuapp.com/";
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
   const history = useHistory();
 
   const [register, setRegister] = useState({

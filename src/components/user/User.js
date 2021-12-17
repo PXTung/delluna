@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
+import { ConstantContext } from "../../context/Constant";
 
 const User = () => {
-  const host = "https://dellunashop.herokuapp.com/";
-  const [user, setUser] = useState({});
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
 
   useEffect(() => {
     axios
@@ -14,7 +15,7 @@ const User = () => {
       })
       .then((res) => console.log(res))
       .catch((error) => console.log(JSON.stringify(error)));
-  }, []);
+  }, [host]);
 
   return "";
 };

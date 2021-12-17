@@ -1,10 +1,14 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { ConstantContext } from "./Constant";
 
 export const UserContext = createContext();
 
 const UserProvider = (props) => {
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
+
   const [username, setUsername] = useState(null);
   const [authenticated, setAuthenticated] = useState(false);
 
@@ -12,7 +16,7 @@ const UserProvider = (props) => {
     const token = localStorage.getItem("token");
     if (token != null) {
       axios
-        .get("https://dellunashop.herokuapp.com/verify", {
+        .get(host + "/verify", {
           headers: { Authorization: token },
         })
         .then((res) => {
@@ -24,7 +28,7 @@ const UserProvider = (props) => {
           console.log(error);
         });
     }
-  }, []);
+  }, [host]);
   return (
     <>
       <UserContext.Provider

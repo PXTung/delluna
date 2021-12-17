@@ -1,12 +1,16 @@
 import { Pagination } from "@mui/material";
 import axios from "axios";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
+import { ConstantContext } from "../../context/Constant";
 import Loading from "../loading/Loading";
 import Header from "./Header";
 import ProductItem, { ProductItemFake } from "./ProductItem";
 
 const ProductType = (props) => {
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
+
   const name = props.match.params.name;
   const [products, setProducts] = useState();
   const [pageable, setPageable] = useState({ index: 1, size: 12, total: 1 });
@@ -14,7 +18,7 @@ const ProductType = (props) => {
   useEffect(() => {
     axios
       .get(
-        "https://dellunashop.herokuapp.com/product/type/" +
+        host + "/product/type/" +
           name +
           "?index=" +
           pageable.index +
@@ -35,7 +39,7 @@ const ProductType = (props) => {
           total: res.data.total,
         });
       });
-  }, [name, pageable.index, pageable.size]);
+  }, [name, pageable.index, pageable.size, host]);
 
   const updatePage = (page) => {
     setPageable({ index: page, size: pageable.size, total: pageable.total });

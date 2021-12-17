@@ -9,8 +9,11 @@ import Loading from "../loading/Loading";
 import { CartContext } from "../../context/Cart";
 import { useHistory } from "react-router";
 import Header from "./Header";
+import { ConstantContext } from "../../context/Constant";
 
 const ProductDetail = (props) => {
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
   const id = props.match.params.id;
   const [product, setProduct] = useState(null);
   const [image, setImage] = useState();
@@ -22,7 +25,7 @@ const ProductDetail = (props) => {
 
   useEffect(() => {
     axios
-      .get("https://dellunashop.herokuapp.com/product/" + id)
+      .get(host + "/product/" + id)
       .then((res) => {
         setProduct({
           product: res.data,
@@ -37,7 +40,7 @@ const ProductDetail = (props) => {
         console.log(error);
       });
     window.scrollTo(0, 0);
-  }, [id, props]);
+  }, [id, props, host]);
 
   const ThumbnailCarousel = () => {
     const item = product.product;

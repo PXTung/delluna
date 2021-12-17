@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 import { TypeContext } from "../../context/Type";
 
 const Dashboard = () => {
-  const host = "https://dellunashop.herokuapp.com/";
-  const googleHost = "https://drive.google.com/uc?export=view&id=";
+  const host = "http://dellunashop.us-east-2.elasticbeanstalk.com/"
   const history = useHistory();
   const [pictures, setPictures] = useState([{ key: 0, value: "" }]);
   const [images, setImages] = useState([]);
@@ -31,12 +30,14 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get(host + "admin", "", {
+      .get("http://dellunashop.us-east-2.elasticbeanstalk.com/admin", {
         headers: {
-          Authentication: localStorage.getItem("token"),
+          Authorization: localStorage.getItem("token"),
         },
       })
       .catch((e) => {
+        console.log(e)
+        console.log(localStorage.getItem("token"))
         history.push("/login");
         toast("YOU DON'T HAVE PERMISSION");
       });
@@ -80,19 +81,13 @@ const Dashboard = () => {
   };
 
   const contentHandler = (e) => {
-    const image = e.target.value.split("/");
-    if (image.length > 5) {
-      product.content = googleHost + image[5];
-    }
+    product.content = e.target.value;
   };
 
   const updatePicture = (key, value) => {
-    const image = value.split("/");
-    if (image.length > 5) {
-      images[key] = { key: key, link: googleHost + image[5], type: "normal" };
-      setImages([...images]);
-      product.images = images;
-    }
+    images[key] = { key: key, link: value, type: "normal" };
+    setImages([...images]);
+    product.images = images;
 
     pictures[key].value = value;
     setPictures([...pictures]);

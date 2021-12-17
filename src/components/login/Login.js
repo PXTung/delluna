@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ConstantContext } from "../../context/Constant";
 import { UserContext } from "../../context/User";
 
 const Login = () => {
   const history = useHistory();
   const userContext = useContext(UserContext);
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
 
   const LoginHandler = (e) => {
     e.preventDefault();
@@ -17,7 +20,7 @@ const Login = () => {
     formData.append("email", email);
     formData.append("password", password);
 
-    fetch("https://dellunashop.herokuapp.com/authenticate", {
+    fetch(host + "/authenticate", {
       method: "POST",
       body: formData,
       redirect: "follow",

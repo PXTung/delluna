@@ -33,6 +33,7 @@ const ProductItem = ({ product, animation }) => {
       <div className="item-image" onClick={() => itemDetail(product.id)}>
         <div className="item-image-frame">
           <img src={product.profilePicture} alt="#" />
+          {/* <img src="https://res.cloudinary.com/tungpx0809/image/upload/v1639649338/ab17a6fffc0e7e0f4a1e2d90067d2b1f_sxxeei.jpg" alt="#"/> */}
         </div>
       </div>
       <div className="item-content">

@@ -10,24 +10,27 @@ import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
 import Content from "./components/content/Content";
 import Footer from "./components/footer/Footer";
+import ConstantProvider from "./context/Constant";
 
 function App() {
   return (
-    <UserProvider>
-      <MenuProvider>
-        <CartProvider>
-          <TypeProvider>
-            <Router>
-              <Navbar />
-              <Header />
-              <Content />
-              <Footer />
-            </Router>
-          </TypeProvider>
-        </CartProvider>
-      </MenuProvider>
-      <ToastContainer />
-    </UserProvider>
+    <ConstantProvider>
+      <UserProvider>
+          <MenuProvider>
+            <CartProvider>
+              <TypeProvider>
+                <Router>
+                  <Navbar />
+                  <Header />
+                  <Content />
+                  <Footer />
+                </Router>
+              </TypeProvider>
+            </CartProvider>
+          </MenuProvider>
+        <ToastContainer />
+      </UserProvider>
+    </ConstantProvider>
   );
 }
 

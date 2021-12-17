@@ -1,12 +1,14 @@
 import { Pagination } from "@mui/material";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
+import { ConstantContext } from "../../context/Constant";
 import Loading from "../loading/Loading";
 import Header from "../product/Header";
 
 const ListOrder = () => {
-  const host = "https://dellunashop.herokuapp.com/";
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
   const [orders, setOrders] = useState(null);
   const [pageable, setPageable] = useState({ index: 1, size: 10, total: 1 });
 
@@ -26,7 +28,7 @@ const ListOrder = () => {
         });
       })
       .catch((error) => console.log(JSON.stringify(error)));
-  }, [pageable.index, pageable.size]);
+  }, [pageable.index, pageable.size, host]);
 
   console.log(orders);
   console.log(pageable);

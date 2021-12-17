@@ -1,11 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Suggestions from "../product/Suggestions";
 import Loading from "../loading/Loading";
 import Hot from "../product/Hot";
 import New from "../product/New";
+import { ConstantContext } from "../../context/Constant";
 
 const Home = () => {
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
+
   const [product, setProduct] = useState({
     suggestions: [],
     hot: [],
@@ -14,9 +18,7 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      const homeProduct = await axios.get("https://dellunashop.herokuapp.com/product/home");
-
-      console.log(homeProduct);
+      const homeProduct = await axios.get(host + "/product/home");
 
       setProduct({
         suggestions: homeProduct.data.suggestion,
@@ -25,7 +27,7 @@ const Home = () => {
       });
       window.scrollTo(0, 0);
     })();
-  }, []);
+  }, [host]);
 
   if (product.suggestions.length > 0) {
     return (

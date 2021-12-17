@@ -3,26 +3,30 @@ import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import { CartContext } from "../../context/Cart";
+import { ConstantContext } from "../../context/Constant";
 import Loading from "../loading/Loading";
 
 const Order = () => {
   const history = useHistory();
   const [order, setOrder] = useState();
+  const constant = useContext(ConstantContext);
+  const host = constant.host_api;
   const cartContext = useContext(CartContext);
+  
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart"));
     const order = cart.filter((item) => item.status === true);
 
     axios
-      .post("https://dellunashop.herokuapp.com/order", JSON.stringify(order), {
+      .post(host + "/order", JSON.stringify(order), {
         headers: {
           Authorization: localStorage.getItem("token"),
           "Content-type": "application/json",
         },
       })
       .then((res) => setOrder(res.data));
-  }, []);
+  }, [host]);
 
   const updateOrder = (product) => {
     const newOrder = JSON.parse(JSON.stringify(order));
@@ -32,7 +36,7 @@ const Order = () => {
 
   const saveOrder = () => {
     axios
-      .post("https://dellunashop.herokuapp.com/order/save", JSON.stringify(order), {
+      .post(host + "/order/save", JSON.stringify(order), {
         headers: {
           Authorization: localStorage.getItem("token"),
           "Content-type": "application/json",
