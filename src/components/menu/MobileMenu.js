@@ -42,7 +42,7 @@ const MobileMenu = () => {
             <NavCart type="MOBILE" />
           </li>
           <li className="mobile-item">
-            <Link to="/login">
+            <Link to="./list-order">
               <i className="fas fa-file-invoice" />
               Order
             </Link>
