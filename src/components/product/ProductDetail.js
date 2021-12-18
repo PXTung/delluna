@@ -25,7 +25,7 @@ const ProductDetail = (props) => {
 
   useEffect(() => {
     axios
-      .get(host + "/product/" + id)
+      .get(host + "product/" + id)
       .then((res) => {
         setProduct({
           product: res.data,

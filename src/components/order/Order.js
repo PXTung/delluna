@@ -19,7 +19,7 @@ const Order = () => {
     const order = cart.filter((item) => item.status === true);
 
     axios
-      .post(host + "/order", JSON.stringify(order), {
+      .post(host + "order", JSON.stringify(order), {
         headers: {
           Authorization: localStorage.getItem("token"),
           "Content-type": "application/json",
@@ -36,7 +36,7 @@ const Order = () => {
 
   const saveOrder = () => {
     axios
-      .post(host + "/order/save", JSON.stringify(order), {
+      .post(host + "order/save", JSON.stringify(order), {
         headers: {
           Authorization: localStorage.getItem("token"),
           "Content-type": "application/json",

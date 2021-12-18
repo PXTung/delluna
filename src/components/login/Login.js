@@ -20,7 +20,7 @@ const Login = () => {
     formData.append("email", email);
     formData.append("password", password);
 
-    fetch(host + "/authenticate", {
+    fetch(host + "authenticate", {
       method: "POST",
       body: formData,
       redirect: "follow",

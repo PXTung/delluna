@@ -16,7 +16,7 @@ const UserProvider = (props) => {
     const token = localStorage.getItem("token");
     if (token != null) {
       axios
-        .get(host + "/verify", {
+        .get(host + "verify", {
           headers: { Authorization: token },
         })
         .then((res) => {

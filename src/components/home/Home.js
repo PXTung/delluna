@@ -18,7 +18,7 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      const homeProduct = await axios.get(host + "/product/home/");
+      const homeProduct = await axios.get(host + "product/home/");
 
       setProduct({
         suggestions: homeProduct.data.suggestion,

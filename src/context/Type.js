@@ -11,7 +11,7 @@ const TypeProvider = (props) => {
 
   useEffect(() => {
     axios
-      .get(host + "/type/")
+      .get(host + "type/")
       .then((res) => setTypes(res.data));
   }, [host]);
 

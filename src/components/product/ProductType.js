@@ -18,7 +18,7 @@ const ProductType = (props) => {
   useEffect(() => {
     axios
       .get(
-        host + "/product/type/" +
+        host + "product/type/" +
           name +
           "?index=" +
           pageable.index +
