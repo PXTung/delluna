@@ -37,7 +37,6 @@ const Dashboard = () => {
       })
       .catch((e) => {
         console.log(e)
-        console.log(localStorage.getItem("token"))
         history.push("/login");
         toast("YOU DON'T HAVE PERMISSION");
       });
