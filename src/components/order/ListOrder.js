@@ -1,5 +1,6 @@
 import { Pagination } from "@mui/material";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { ConstantContext } from "../../context/Constant";
@@ -62,7 +63,7 @@ const ListOrder = () => {
                     <div className="ordered-item" key={index}>
                       <div className="ordered-item-index col-s1">{index + 1}</div>
                       <div className="ordered-item-name col-s4">
-                        <a href={"/product/" + item.product.id}>{item.product.name}</a>
+                        <Link to={"/product/" + item.product.id}>{item.product.name}</Link>
                       </div>
                       <div className="order-item-quantity col-s1">{item.quantity}</div>
                       <div className="ordered-item-price col-s2">{item.product.price} VND</div>

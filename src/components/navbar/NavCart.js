@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/Cart";
 import { UserContext } from "../../context/User";
 
@@ -10,9 +11,9 @@ const NavCart = (props) => {
       return (
         <CartContext.Consumer>
           {({ cart }) => (
-            <a href="/cart" className="navbar-link">
+            <Link to="/cart" className="navbar-link">
               Cart ({cart.length})
-            </a>
+            </Link>
           )}
         </CartContext.Consumer>
       );
@@ -20,19 +21,19 @@ const NavCart = (props) => {
       return (
         <CartContext.Consumer>
           {({ cart }) => (
-            <a href="/cart" className="navbar-link">
+            <Link to="/cart" className="navbar-link">
               <i className="fas fa-shopping-cart" />
               Cart ({cart.length})
-            </a>
+            </Link>
           )}
         </CartContext.Consumer>
       );
     }
   } else {
     return (
-      <a href="/login" className="navbar-link">
+      <Link to="/login" className="navbar-link">
         Cart
-      </a>
+      </Link>
     );
   }
 };

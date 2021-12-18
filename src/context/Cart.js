@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const CartContext = createContext();
@@ -35,7 +36,7 @@ export const CartProvider = (props) => {
         check = true;
         item.quantity = quantity;
         item.status = status;
-        toast(<a href="/cart">YOUR CART IS UPDATED</a>);
+        toast(<Link to="/cart">YOUR CART IS UPDATED</Link>);
       }
     }
 
@@ -45,7 +46,7 @@ export const CartProvider = (props) => {
       } else {
         newCart = [{ product, quantity, status }];
       }
-      toast(<a href="/cart">ADD PRODUCT TO CART SUCCESSFUL</a>);
+      toast(<Link to="/cart">ADD PRODUCT TO CART SUCCESSFUL</Link>);
     }
 
     return newCart;

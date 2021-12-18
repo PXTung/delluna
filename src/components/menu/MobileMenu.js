@@ -1,4 +1,5 @@
 import NavCart from "../navbar/NavCart";
+import { Link } from "react-router-dom";
 import { MenuContext } from "../../context/Menu";
 import { LoginOrUsername, RegisterOrLogout } from "../navbar/Navbar";
 import { TypeContext } from "../../context/Type";
@@ -25,10 +26,10 @@ const MobileMenu = () => {
               types.map((type) => {
                 return (
                   <li className="mobile-item" key={type.id}>
-                    <a href={"/product/type/" + type.name}>
+                    <Link to={"/product/type/" + type.name}>
                       <i className="fas fa-box" />
                       {type.name}
-                    </a>
+                    </Link>
                   </li>
                 );
               })
@@ -41,10 +42,10 @@ const MobileMenu = () => {
             <NavCart type="MOBILE" />
           </li>
           <li className="mobile-item">
-            <a href="/login">
+            <Link to="/login">
               <i className="fas fa-file-invoice" />
               Order
-            </a>
+            </Link>
           </li>
           <RegisterOrLogout />
         </ul>

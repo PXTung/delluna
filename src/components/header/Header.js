@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Type from "../type/Type";
+import { Link } from "react-router-dom";
 import MobileMenu from "../menu/MobileMenu";
 import { MenuContext } from "../../context/Menu";
 
@@ -58,7 +59,7 @@ const Header = () => {
       <header className="grid">
         <div className={active ? "header-head header-active" : "header-head"}>
           <h1 className="header-logo">
-            <a href="/">SHOPEE</a>
+            <Link to="/">SHOPEE</Link>
           </h1>
           <div className="header-icon">
             <MenuContext.Consumer>

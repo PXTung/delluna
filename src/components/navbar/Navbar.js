@@ -10,9 +10,9 @@ export const LoginOrUsername = (props) => {
   if (props.type === "PC") {
     if (userContext.authenticated) {
       return (
-        <a href="/member" className="navbar-link">
+        <Link to="/member" className="navbar-link">
           Wellcome, {userContext.username}
-        </a>
+        </Link>
       );
     } else {
       return (
@@ -24,17 +24,17 @@ export const LoginOrUsername = (props) => {
   } else {
     if (userContext.authenticated) {
       return (
-        <a href="/member" className="navbar-link">
+        <Link to="/member" className="navbar-link">
           <i className="far fa-user"></i>
           {userContext.username}
-        </a>
+        </Link>
       );
     } else {
       return (
-        <a href="/login">
+        <Link to="/login">
           <i className="fas fa-lock" />
           Login
-        </a>
+        </Link>
       );
     }
   }
@@ -61,9 +61,9 @@ export const RegisterOrLogout = (props) => {
     } else {
       return (
         <li className="navbar-item">
-          <a href="./register" className="navbar-link">
+          <Link to="./register" className="navbar-link">
             Register
-          </a>
+          </Link>
           <span className="navbar-hello">
             <span>Hello!</span>
           </span>
@@ -81,10 +81,10 @@ export const RegisterOrLogout = (props) => {
     } else {
       return (
         <li className="mobile-item">
-          <a href="/register">
+          <Link to="/register">
             <i className="fas fa-pen" />
             Register
-          </a>
+          </Link>
         </li>
       );
     }
@@ -106,9 +106,9 @@ const Navbar = () => {
         </li>
         <li className="navbar-separate"></li>
         <li className="navbar-item">
-          <a href="./list-order" className="navbar-link">
+          <Link to="./list-order" className="navbar-link">
             Order
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
