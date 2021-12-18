@@ -34,7 +34,7 @@ const ListOrder = () => {
         console.log(JSON.stringify(error));
         history.push("./login");
       });
-  }, [pageable.index, pageable.size, host]);
+  }, [pageable.index, pageable.size, host, history]);
 
   console.log(orders);
   console.log(pageable);
