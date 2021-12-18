@@ -15,7 +15,7 @@ const ListOrder = () => {
 
   useEffect(() => {
     axios
-      .get(host + "order?index=" + pageable.index + "&size=" + pageable.size, {
+      .get(host + "/order?index=" + pageable.index + "&size=" + pageable.size, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },

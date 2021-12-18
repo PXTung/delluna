@@ -14,23 +14,25 @@ import ConstantProvider from "./context/Constant";
 
 function App() {
   return (
+    <Router>
     <ConstantProvider>
       <UserProvider>
           <MenuProvider>
             <CartProvider>
               <TypeProvider>
-                <Router>
+                
                   <Navbar />
                   <Header />
                   <Content />
                   <Footer />
-                </Router>
+                
               </TypeProvider>
             </CartProvider>
           </MenuProvider>
         <ToastContainer />
       </UserProvider>
     </ConstantProvider>
+    </Router>
   );
 }
 
