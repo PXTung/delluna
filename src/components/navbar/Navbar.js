@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../context/User";
 import NavCart from "../navbar/NavCart";
 
@@ -15,9 +16,9 @@ export const LoginOrUsername = (props) => {
       );
     } else {
       return (
-        <a href="./login" className="navbar-link">
+        <Link to="./login" className="navbar-link">
           Login
-        </a>
+        </Link>
       );
     }
   } else {
