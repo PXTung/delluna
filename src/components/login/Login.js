@@ -38,6 +38,10 @@ const Login = () => {
       });
   };
 
+  const registerHandle = () => {
+    history.push("./register");
+  }
+
   return (
     <>
       <div className="visual"></div>
@@ -95,7 +99,7 @@ const Login = () => {
           </div>
           <div className="login-field login-button">
             <button className="login-login">LOGIN</button>
-            <button className="login-register">REGISTER</button>
+            <button className="login-register" onClick={() => registerHandle()}>REGISTER</button>
           </div>
         </form>
       </section>
