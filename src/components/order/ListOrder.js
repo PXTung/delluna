@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { ConstantContext } from "../../context/Constant";
-import Loading from "../loading/Loading";
 import Header from "../product/Header";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -32,7 +31,11 @@ const ListOrder = () => {
       })
       .catch((error) => {
         console.log(JSON.stringify(error));
-        history.push("./login");
+        if (error.response) {
+        if (error.response.status === 403) {
+          history.push("./login");
+        }
+      }
       });
   }, [pageable.index, pageable.size, host, history]);
 
@@ -44,7 +47,7 @@ const ListOrder = () => {
   };
 
   if (orders == null) {
-    return <Loading />;
+    return "";
   } else {
     return (
       <>
