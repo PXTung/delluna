@@ -20,12 +20,12 @@ const Content = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/member" component={User} />
+      <Route path="/login*" component={Login} />
+      <Route path="/member*" component={User} />
       <Route path="/register" component={Register} />
       <Route exact path="/product/:id" component={Detail} />
       <Route exact path="/product/type/:name" component={ProductType} />
-      <Route path="/cart" component={Cart} />
+      <Route path="/cart*" component={Cart} />
       <Route path="/order" component={Order} />
       <Route path="/list-order" component={ListOrder} />
       <Route path="/dashboard" component={Dashboard} />
